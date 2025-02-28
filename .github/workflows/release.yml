@@ -21,6 +21,7 @@ jobs:
         with:
           name: xz-package
           path: dist/
+      - run: rm -rf dist/package
       - run: cd dist; zip -r ../xz-package.zip .
       - run:
           gh release upload ${{ github.event.release.tag_name }}
